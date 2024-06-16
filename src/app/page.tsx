@@ -75,14 +75,6 @@ export default function EventsPage() {
   };
 
   const onClick = {
-    update: (updatedEvent: EventCardProps) => {
-      setAllEvents((prev) =>
-        prev.map((event) =>
-          event.id === updatedEvent.id ? updatedEvent : event
-        )
-      );
-      onClick.applyDateFilter();
-    },
     delete: (event: EventCardProps) => {
       setSelectedEvent(event);
       setIsAlertModalOpen(true);
