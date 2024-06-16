@@ -44,8 +44,8 @@ export default function EventsPage() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { totalEvent, eventList } = await getEventLists();
-        setTotalPages(Math.ceil(totalEvent / slice));
+        const { eventList } = await getEventLists();
+        setTotalPages(Math.ceil(eventList.length / slice));
         setAllEvents(eventList);
         setFilteredEvents(eventList);
       } catch (err: any) {
